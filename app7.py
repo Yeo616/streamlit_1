@@ -37,18 +37,18 @@ def main():
             print(upload_file.size)
             print(upload_file.type)
         
-        # 파일명을 유니크하게 만들어서 저장해야 한다. 
-        # 현재시간을 활용해서, 파일명을 만든다.
-        current_time = datetime.now()
-        print(current_time)
-        # 파일명에 콜론(:)이 들어가면 에러가 난다.
-        # 나는 지금 currentime을 파일명으로 만들고 싶다.
-        print(current_time.isoformat().replace(':','_'))
-        # 콜론을 언더스코어로 바꾸자
+            # 파일명을 유니크하게 만들어서 저장해야 한다. 
+            # 현재시간을 활용해서, 파일명을 만든다.
+            current_time = datetime.now()
+            print(current_time)
+            # 파일명에 콜론(:)이 들어가면 에러가 난다.
+            # 나는 지금 currentime을 파일명으로 만들고 싶다.
+            print(current_time.isoformat().replace(':','_'))
+            # 콜론을 언더스코어로 바꾸자
 
-        new_filename = current_time.isoformat().replace(':','_')+ '.jpg'
-        upload_file.name = new_filename
-        save_uploaded_file('temp',upload_file)
+            new_filename = current_time.isoformat().replace(':','_')+ '.jpg'
+            upload_file.name = new_filename
+            save_uploaded_file('temp',upload_file)
 
     elif choice == menu[1]:
         st.subheader('CSV 파일 업로드')
