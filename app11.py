@@ -57,6 +57,18 @@ def main():
 
     # plotly 라이브러리를 이용한 차트 그리기
     # 스트림릿이 이미 얘를 설치해놨다.
+    df4 = pd.read_csv('data2/prog_languages_data.csv', index_col=0 )
+    st.dataframe(df4)
+
+    # plotly의 pie차트
+    # 쌤 회사에서 많이 쓰고 있는 것. 
+    fig1 = px.pie(df4,names = 'lang',values = 'Sum',title = '각 언어별 파이차트')
+    st.plotly_chart(fig1)
+
+    # plotly의 bar차트
+    df4_sorted = df4.sort_values('Sum',ascending=False)
+    fig2 = px.bar(df4_sorted, x = 'lang',y='Sum')
+    st.plotly_chart(fig2)
 
 
     # 주피터 노트북으로 코드를 짜고, 본다음에, 여기서 실행시키는 것.
