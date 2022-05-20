@@ -52,6 +52,23 @@ def main():
 
     elif choice == menu[1]:
         st.subheader('CSV 파일 업로드')
+
+        upload_file = st.file_uploader('CSV 파일 선택',type = ['csv'])
+        
+        if upload_file is not None:
+            # 파일명을 유니크하게 만들어서 저장해야 한다. 
+            # 현재시간을 활용해서, 파일명을 만든다.
+            current_time = datetime.now()
+            print(current_time)
+            # 파일명에 콜론(:)이 들어가면 에러가 난다.
+            # 나는 지금 currentime을 파일명으로 만들고 싶다.
+            print(current_time.isoformat().replace(':','_'))
+            # 콜론을 언더스코어로 바꾸자
+
+            new_filename = current_time.isoformat().replace(':','_')+ '.csv'
+            upload_file.name = new_filename
+            save_uploaded_file('temp',upload_file)
+
     
     
     else:
@@ -59,7 +76,7 @@ def main():
 
     
     ## 기본 골격을 잡아놓고, 
-    ## 
+    ## shift tab 앞으로 들여쓰기
 
 
 if __name__ == '__main__':
