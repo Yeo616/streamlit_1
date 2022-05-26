@@ -8,7 +8,7 @@ import streamlit as st
 # 밑에꺼 이해하지 말고, 그냥 외우세요. 틀입니다.정해져있는 프레임
 def main():
     st.title('안녕하세요. 웹 대시보드 프로젝트')
-    st.title('Hello')
+    st.title('Hello ')
 
 if __name__ == '__main__':
     main()
