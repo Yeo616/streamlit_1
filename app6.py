@@ -9,7 +9,7 @@ def main():
     name = st.text_input('이름을 입력하세요!')
     # 넣으면 메모리에 저장됨
     if name != '':
-        st.subheader(name + '님, 들어올 때는 맘대로지만, 나갈땐 아니란다.')
+        st.subheader(name + '님, 안녕하세요.')
     # 2. 입력 글자 갯수 제한
     address = st.text_input('주소를 입력하세요',max_chars = 10)
     st.subheader(address)
